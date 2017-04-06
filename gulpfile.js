@@ -9,19 +9,19 @@ gulp.task('minify:js', ['clean'], function(){
     return gulp.src(['src/js/app.js','src/js/**/*.js'])
         .pipe(concat('app.min.js'))
         .pipe(uglify({mangle: true}))
-        .pipe(gulp.dest('wwwroot/js'));
+        .pipe(gulp.dest('wwwroot/'));
 });
 
 gulp.task('minify:css', ['clean'], function(){
     return gulp.src('src/css/*.css')
         .pipe(concatcss('styles.min.css'))
         .pipe(minifycss())
-        .pipe(gulp.dest('wwwroot/css'));
+        .pipe(gulp.dest('wwwroot/'));
 });
 
 gulp.task('copy:html', ['clean'], function(){
     return gulp.src(['src/html/views/*.html', 'src/html/views/partial/*.html'])
-        .pipe(gulp.dest('wwwroot/html'));
+        .pipe(gulp.dest('wwwroot/'));
 });
 
 gulp.task('clean', function(){
