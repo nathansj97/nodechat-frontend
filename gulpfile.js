@@ -4,10 +4,12 @@ var uglify = require('gulp-uglify');
 var minifycss = require('gulp-minify-css');
 var concatcss = require('gulp-concat-css');
 var del = require('del');
+var ngannotate = require('gulp-ng-annotate');
 
 gulp.task('minify:js', ['clean'], function(){
     return gulp.src(['src/js/app.js','src/js/**/*.js'])
         .pipe(concat('app.min.js'))
+        .pipe(ngannotate())
         .pipe(uglify({mangle: true}))
         .pipe(gulp.dest('wwwroot/'));
 });
