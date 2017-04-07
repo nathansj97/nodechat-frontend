@@ -14,7 +14,7 @@ angular.module('nodechat')
         };
 
         var _currentUser = sessionService.getCurrentUser();
-        var socket = io.connect('', { query: 'username=' + _currentUser.username + '&key=' + key});
+        var socket = io.connect('52.166.79.84', { query: 'username=' + _currentUser.username + '&key=' + key});
         
         self.sendMessage = function(recipient, message){
             // Send a message to a given user.
